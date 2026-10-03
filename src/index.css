@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+      font-family: 'Crossten';
+      src: url('/fonts/crossten-medium.woff2') format('woff2'),
+           url('/fonts/crossten-medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+  }
+  @font-face {
+      font-family: 'Crossten';
+      src: url('/fonts/crossten-semibold.woff2') format('woff2'),
+           url('/fonts/crossten-semibold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+  }
+  
+  body {
+    background-color: theme('colors.background');
+    color: #1e293b; /* slate-800 */
+    font-family: theme('fontFamily.sans');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .glass-panel {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 4px 20px rgba(41, 84, 87, 0.05);
+  }
+
+  .tab-active {
+      border-bottom: 2px solid theme('colors.accent');
+      color: theme('colors.primary');
+      font-weight: 600;
+  }
+  
+  .tab-inactive {
+      color: #64748b;
+      border-bottom: 2px solid transparent;
+  }
+  
+  .tab-inactive:hover {
+      color: theme('colors.primary');
+      border-bottom: 2px solid #cbd5e1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
